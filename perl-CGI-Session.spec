@@ -1,6 +1,6 @@
 Name:           perl-CGI-Session
 Version:        4.35
-Release:        5%{?dist}
+Release:        5%{?dist}.goose.1
 Summary:        Persistent session data in CGI applications
 License:        GPL+ or Artistic
 Group:          Development/Libraries
@@ -10,6 +10,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 BuildRequires:	perl(FreezeThaw), perl(ExtUtils::MakeMaker), perl(Test::More)
+BuildRequires:	perl-CPAN
 
 %description
 CGI-Session is a Perl5 library that provides an easy, reliable and modular
@@ -49,6 +50,9 @@ rm -rf %{buildroot}
 %{_mandir}/man3/*
 
 %changelog
+* Fri Jan 6 2012 Ivan Makfinsky <makfinsky@gooseproject.org> - 4.35-5.goose.1
+- Added perl-CPAN as a buildrequires
+
 * Fri Apr 30 2010 Marcela Mašláňová <mmaslano@redhat.com> - 4.35-5
 - add package into RHEL-6
 - Resolves: rhbz#463667
